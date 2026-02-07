@@ -1,0 +1,57 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    # ports:
+    #   - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - metanet1
+
+  # cube:
+  #   image: cubejs/cube:latest
+  #   environment:
+  #     CUBEJS_DB_TYPE: postgres
+  #     CUBEJS_DB_HOST: postgres
+  #     CUBEJS_DB_PORT: 5432
+  #     CUBEJS_DB_NAME: agriculture
+  #     CUBEJS_DB_USER: admin
+  #     CUBEJS_DB_PASS: secret
+  #   ports:
+  #     - "4000:4000"
+  #   depends_on:
+  #     - postgres
+
+  metabase:
+    image: metabase/metabase:latest
+    volumes:
+      - /dev/urandom:/dev/random:ro
+    ports:
+      - 3000:3000
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: ${POSTGRES_DB}
+      MB_DB_PORT: 5432
+      MB_DB_USER: ${POSTGRES_USER}
+      MB_DB_PASS: ${POSTGRES_PASSWORD}
+      MB_DB_HOST: postgres
+    networks:
+      - metanet1
+    healthcheck:
+      test: curl --fail -I http://localhost:3000/api/health || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - postgres
+      # - cube
+
+volumes:
+  postgres_data:
+
+networks:
+  metanet1:
