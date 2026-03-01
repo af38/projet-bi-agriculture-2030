@@ -37,13 +37,13 @@ services:
     networks:
     - metanet1
     volumes:
-      - ./cube/schema:/cube/conf/schema
+      - ./cube/model:/cube/conf/model
 
   metabase:
     image: metabase/metabase:latest
     volumes:
       - /dev/urandom:/dev/random:ro
-      - ./plugins/:/plugins/          # pour le driver JDBC Cube.js
+      # - ./plugins/:/plugins/          # pour le driver JDBC Cube.js
     ports:
       - 3000:3000
     environment:
