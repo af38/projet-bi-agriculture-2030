@@ -1,0 +1,37 @@
+          table           | count 
+--------------------------+-------
+ dim_temps                |   325
+ dim_station              |    15
+ dim_alerte               |     2
+ fait_releves_climatiques |  3287
+(4 rows)
+
+ missing_temps 
+---------------
+             0
+(1 row)
+
+ missing_station 
+-----------------
+               0
+(1 row)
+
+ missing_alerte 
+----------------
+              0
+(1 row)
+
+ id_temps | id_station | nb 
+----------+------------+----
+(0 rows)
+
+ temp_aberrante 
+----------------
+              0
+(1 row)
+
+ humidite_aberrante 
+--------------------
+                  0
+(1 row)
+

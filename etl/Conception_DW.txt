@@ -1,0 +1,39 @@
+# CONCEPTION DU DATA WAREHOUSE
+# Schéma en Étoile - Agriculture Résilience 2030 
+
+┌──────────────────────────┐        ┌────────────────────────────────────────────┐        ┌───────────────────────────┐
+│        dim_temps         │        │            fait_releves_climatiques        │        │        dim_station        │
+├──────────────────────────┤        ├────────────────────────────────────────────┤        ├───────────────────────────┤
+│ id_temps (PK)            │◄───────┤ id_temps (FK)                              │───────►│ id_station (PK)           │
+│ date_complete (UNIQUE)   │        │ id_station (FK)                            │        │ code_station (UNIQUE)     │
+│ annee                    │        │ id_alerte (FK, NULL)                       │        │ nom_station               │
+│ mois                     │        │                                            │        │ ville                     │
+│ jour                     │        │ -- Mesures météo (jour)                    │        │ zone_geo                  │
+│ trimestre                │        │ temperature_max                            │        │ altitude                  │
+│ saison                   │        │ temperature_min                            │        │ capteur_type              │
+│ semaine_annee            │        │ temperature_moy                            │        └───────────────────────────┘
+│ jour_semaine             │        │ humidite_moyenne                           │
+│ est_weekend              │        │ precipitations_jour                        │
+└──────────────────────────┘        │ wind_speed_max                             │
+                                    │ radiation_solaire                          │
+                                    │                                            │
+                                    │ -- Indicateurs dérivés                     │
+                                    │ idhc_30j                                   │
+                                    │ jours_sans_pluie                           │
+                                    │ score_risque                               │
+                                    │ niveau_stress_hydrique                     │
+                                    │ qualite_donnee                             │
+                                    │                                            │
+                                    │ Grain : 1 station × 1 jour                 │
+                                    │ Contrainte : UNIQUE (id_temps, id_station) │
+                                    └────────────────────────────────────────────┘
+                                                       ▲
+                                                       │
+                                    ┌──────────────────┴───────────────────┐
+                                    │               dim_alerte             │
+                                    ├──────────────────────────────────────┤
+                                    │ id_alerte (PK)                       │
+                                    │ type_precip                          │
+                                    │ severity_index                       │
+                                    │ niveau_urgence                       │
+                                    └──────────────────────────────────────┘
