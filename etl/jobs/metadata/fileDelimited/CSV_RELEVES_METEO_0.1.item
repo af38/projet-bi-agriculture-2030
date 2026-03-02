@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_dJvYYQhcEfGKpY3i0iSVKg" name="CSV_RELEVES_METEO" dataPackage="_dJvYYghcEfGKpY3i0iSVKg" Server="Localhost 127.0.0.1" FilePath="C:/BI/projet_bi_agriculture-main/data_generation/releves_meteo.csv" Encoding="UTF-8" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_dJvYYghcEfGKpY3i0iSVKg" name="default" dataManager="_dJvYYQhcEfGKpY3i0iSVKg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_dJvYYwhcEfGKpY3i0iSVKg" id="_yY-ywAhbEfGKpY3i0iSVKg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dJvYZAhcEfGKpY3i0iSVKg" label="timestamp" length="-1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dJvYZQhcEfGKpY3i0iSVKg" label="st_id" length="-1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dJvYZghcEfGKpY3i0iSVKg" label="temp_c" length="-1" precision="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dJvYZwhcEfGKpY3i0iSVKg" label="hum_pct" length="-1" precision="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dJvYaAhcEfGKpY3i0iSVKg" label="wind_speed" length="-1" precision="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

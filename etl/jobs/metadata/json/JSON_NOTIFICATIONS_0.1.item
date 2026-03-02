@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendJSON="http://www.talend.org/json" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendJSON:JSONFileConnection xmi:id="_u4LkQAkFEfGbbJarCKCEhQ" name="JSON_NOTIFICATIONS" dataPackage="_u4LkSAkFEfGbbJarCKCEhQ" JSONFilePath="C:/BI/projet_bi_agriculture-main/data_generation/notifications.json" Encoding="UTF-8" readbyMode="JSONPATH">
+    <schema xmi:id="_u4LkQQkFEfGbbJarCKCEhQ" LimitBoucle="50" AbsoluteXPathQuery="$[*].date">
+      <schemaTargets xmi:id="_u4LkQgkFEfGbbJarCKCEhQ" RelativeXPathQuery="@" TagName="date"/>
+      <schemaTargets xmi:id="_u4LkQwkFEfGbbJarCKCEhQ" RelativeXPathQuery="$[*].station_code" TagName="station_code"/>
+      <schemaTargets xmi:id="_u4LkRAkFEfGbbJarCKCEhQ" RelativeXPathQuery="$[*].precip_mm" TagName="precip_mm"/>
+      <schemaTargets xmi:id="_u4LkRQkFEfGbbJarCKCEhQ" RelativeXPathQuery="$[*].type_precip" TagName="type_precip"/>
+      <schemaTargets xmi:id="_u4LkRgkFEfGbbJarCKCEhQ" RelativeXPathQuery="$[*].severity_index" TagName="severity_index"/>
+      <schemaTargets xmi:id="_u4LkRwkFEfGbbJarCKCEhQ" RelativeXPathQuery="$[*].alert_msg" TagName="alert_msg"/>
+    </schema>
+  </TalendJSON:JSONFileConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_u4LkSAkFEfGbbJarCKCEhQ" name="default" dataManager="_u4LkQAkFEfGbbJarCKCEhQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_u4LkSQkFEfGbbJarCKCEhQ" id="_tpWrkAkDEfGbbJarCKCEhQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkSgkFEfGbbJarCKCEhQ" label="date" length="-1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkSwkFEfGbbJarCKCEhQ" label="station_code" length="1081" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkTAkFEfGbbJarCKCEhQ" label="precip_mm" length="1073" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkTQkFEfGbbJarCKCEhQ" label="type_precip" length="3972" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkTgkFEfGbbJarCKCEhQ" label="severity_index" length="2714" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_u4LkTwkFEfGbbJarCKCEhQ" label="alert_msg" length="13475" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
